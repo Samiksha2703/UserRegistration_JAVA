@@ -74,8 +74,8 @@ public class UserRegistration {
         char[] passwordArray = password.toCharArray();
 
         for (int index = 0; index < passwordArray.length; index++) {
-            if (upperCasePresent = Character.isUpperCase(passwordArray[index])) {
-                break;
+            if (Character.isUpperCase(passwordArray[index])) {
+                upperCasePresent = true;
             }
         }
         if (passwordArray.length >= 8 && upperCasePresent) {
