@@ -36,11 +36,28 @@ public class UserRegistration {
         }
     }
 
+    //method to validate email id
+    private static void isEmailIdValid() {
+        System.out.println("Enter Email-Id.");
+        String emailId = input.next();
+        if emailId == null){
+            System.out.println("Empty Field.");
+        } else{
+            if (emailId.matches("^[a-zA-Z0-9]+([.+-_][a-zA-Z0-9]+)*@[a-zA-z0-9]+.[a-zA-Z]{2}([.][a-zA-Z]{2,4}){0,1}$")) {
+                System.out.println("E-mail Id is Valid");
+            } else {
+                System.out.println("E-mail Id is Invalid");
+            }
+        }
+    }
+
     public static void main(String[] args) {
         //calling method to validate first name
         isFirstNameValid();
         //calling method to validate first name
         isLastNameValid();
+        //calling method to validate first name
+        isEmailIdValid()
     }
 }
 
