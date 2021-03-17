@@ -65,15 +65,33 @@ public class UserRegistration {
             }
         }
     }
-    
+
+    //method to validate password
+    private static void isPasswordValid(){
+        System.out.println("Enter Password.");
+        String password = input.next();
+        if (password == null){
+            System.out.println("Empty Field.");
+        } else{
+            if (password.matches("[a-zA-Z0-9]{8}")) {
+                System.out.println("Password is Valid");
+            } else {
+                System.out.println("Password is Invalid");
+            }
+        }
+    }
+
     public static void main(String[] args) {
         //calling method to validate first name
         isFirstNameValid();
-        //calling method to validate first name
+        //calling method to validate last name
         isLastNameValid();
-        //calling method to validate first name
+        //calling method to validate e mail id
         isEmailIdValid();
+        //calling method to validate mobile number
         isMobileNumberValid();
+        //calling method to validate password
+        isPasswordValid();
     }
 }
 
