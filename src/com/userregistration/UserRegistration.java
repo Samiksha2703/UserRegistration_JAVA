@@ -40,7 +40,7 @@ public class UserRegistration {
     private static void isEmailIdValid() {
         System.out.println("Enter Email-Id.");
         String emailId = input.next();
-        if emailId == null){
+        if (emailId == null){
             System.out.println("Empty Field.");
         } else{
             if (emailId.matches("^[a-zA-Z0-9]+([.+-_][a-zA-Z0-9]+)*@[a-zA-z0-9]+.[a-zA-Z]{2}([.][a-zA-Z]{2,4}){0,1}$")) {
@@ -52,12 +52,12 @@ public class UserRegistration {
     }
 
     //method to validate mobile number
-    private static void isMobileNumberValid(){
+    private static void isMobileNumberValid() {
         System.out.println("Enter Mobile Number.");
         String mobile = input.next();
-        if (mobile == null){
+        if (mobile == null) {
             System.out.println("Empty Field.");
-        } else{
+        } else {
             if (mobile.matches("^[0-9]{2}[0-9]{10}$")) {
                 System.out.println("Mobile Number is Valid");
             } else {
@@ -67,17 +67,21 @@ public class UserRegistration {
     }
 
     //method to validate password
-    private static void isPasswordValid(){
+    private static void isPasswordValid() {
         System.out.println("Enter Password.");
         String password = input.next();
-        if (password == null){
-            System.out.println("Empty Field.");
-        } else{
-            if (password.matches("[a-zA-Z0-9]{8}")) {
-                System.out.println("Password is Valid");
-            } else {
-                System.out.println("Password is Invalid");
+        boolean upperCasePresent = false;
+        char[] passwordArray = password.toCharArray();
+
+        for (int index = 0; index < passwordArray.length; index++) {
+            if (upperCasePresent = Character.isUpperCase(passwordArray[index])) {
+                break;
             }
+        }
+        if (passwordArray.length >= 8 && upperCasePresent) {
+            System.out.println("Password is Valid");
+        } else {
+            System.out.println("Password is Invalid");
         }
     }
 
