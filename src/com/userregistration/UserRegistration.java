@@ -51,13 +51,29 @@ public class UserRegistration {
         }
     }
 
+    //method to validate mobile number
+    private static void isMobileNumberValid(){
+        System.out.println("Enter Mobile Number.");
+        String mobile = input.next();
+        if (mobile == null){
+            System.out.println("Empty Field.");
+        } else{
+            if (mobile.matches("^[0-9]{2}[0-9]{10}$")) {
+                System.out.println("Mobile Number is Valid");
+            } else {
+                System.out.println("Mobile Number is Invalid");
+            }
+        }
+    }
+    
     public static void main(String[] args) {
         //calling method to validate first name
         isFirstNameValid();
         //calling method to validate first name
         isLastNameValid();
         //calling method to validate first name
-        isEmailIdValid()
+        isEmailIdValid();
+        isMobileNumberValid();
     }
 }
 
