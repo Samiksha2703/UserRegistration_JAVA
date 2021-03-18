@@ -13,7 +13,7 @@ public class UserRegistration {
         if (firstName == null) {
             System.out.println("Empty Field.");
         } else {
-            if (firstName.matches("^[A-Z]{1}[a-z]{2,}$")) {
+            if (firstName.matches("^[A-Z]?[a-z]{2,}$")) {
                 System.out.println("First Name is Valid");
             } else {
                 System.out.println("First Name is Invalid");
@@ -28,7 +28,7 @@ public class UserRegistration {
         if (lastName == null) {
             System.out.println("Empty Field.");
         } else {
-            if (lastName.matches("^[A-Z]{1}[a-z]{2,}$")) {
+            if (lastName.matches("^[A-Z]?[a-z]{2,}$")) {
                 System.out.println("Last Name is Valid");
             } else {
                 System.out.println("Last Name is Invalid");
@@ -43,7 +43,7 @@ public class UserRegistration {
         if (emailId == null){
             System.out.println("Empty Field.");
         } else{
-            if (emailId.matches("^[a-zA-Z0-9]+([.+-_][a-zA-Z0-9]+)*@[a-zA-z0-9]+.[a-zA-Z]{2}([.][a-zA-Z]{2,4}){0,1}$")) {
+            if (emailId.matches("^[a-zA-Z0-9]+([.+-_][a-zA-Z0-9]+)*@[a-zA-z0-9]+.[a-zA-Z]{2}([.][a-zA-Z]{2,4})?$")) {
                 System.out.println("E-mail Id is Valid");
             } else {
                 System.out.println("E-mail Id is Invalid");
@@ -63,6 +63,34 @@ public class UserRegistration {
             } else {
                 System.out.println("Mobile Number is Invalid");
             }
+        }
+    }
+
+    // method to validate password
+    private static void isPasswordValid() {
+        String specialChars = "~`!@#$%^&*()-_=+\\|[{]};:'\",<.>/?";
+        int index;
+        boolean upperCasePresent = false;
+        boolean numberPresent = false;
+        boolean specialCharsPresent = false;
+        System.out.println("Enter Password.");
+        String password = input.nextLine();
+        char[] passwordArray = password.toCharArray();
+        for (index = 0; index < passwordArray.length; index++) {
+            if (Character.isUpperCase(passwordArray[index])) {
+                upperCasePresent = true;
+            }
+            if (Character.isDigit(passwordArray[index])) {
+                numberPresent = true;
+            }
+            if (specialChars.contains(String.valueOf(passwordArray[index]))) {
+                specialCharsPresent = true;
+            }
+        }
+        if (passwordArray.length >= 8 && upperCasePresent && numberPresent && specialCharsPresent) {
+            System.out.println("Password is Valid");
+        } else {
+            System.out.println("Password is Invalid");
         }
     }
 
