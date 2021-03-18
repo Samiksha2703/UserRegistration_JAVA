@@ -51,14 +51,14 @@ public class UserRegistration {
         }
     }
 
-    //method to validate mobile number
-    private static void isMobileNumberValid(){
+    // method to validate mobile number
+    private static void isMobileNumberValid() {
         System.out.println("Enter Mobile Number.");
-        String mobile = input.next();
-        if (mobile == null){
+        String mobile = input.nextLine();
+        if (mobile == null) {
             System.out.println("Empty Field.");
-        } else{
-            if (mobile.matches("^[0-9]{2}[0-9]{10}$")) {
+        } else {
+            if (mobile.matches("^[0-9]{2}[ ][0-9]{10}$")) {
                 System.out.println("Mobile Number is Valid");
             } else {
                 System.out.println("Mobile Number is Invalid");
