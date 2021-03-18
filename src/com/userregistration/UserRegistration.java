@@ -51,37 +51,18 @@ public class UserRegistration {
         }
     }
 
-    //method to validate mobile number
+    // method to validate mobile number
     private static void isMobileNumberValid() {
         System.out.println("Enter Mobile Number.");
-        String mobile = input.next();
+        String mobile = input.nextLine();
         if (mobile == null) {
             System.out.println("Empty Field.");
         } else {
-            if (mobile.matches("^[0-9]{2}[0-9]{10}$")) {
+            if (mobile.matches("^[0-9]{2}[ ][0-9]{10}$")) {
                 System.out.println("Mobile Number is Valid");
             } else {
                 System.out.println("Mobile Number is Invalid");
             }
-        }
-    }
-
-    //method to validate password
-    private static void isPasswordValid() {
-        System.out.println("Enter Password.");
-        String password = input.next();
-        boolean upperCasePresent = false;
-        char[] passwordArray = password.toCharArray();
-
-        for (int index = 0; index < passwordArray.length; index++) {
-            if (upperCasePresent = Character.isUpperCase(passwordArray[index])) {
-                break;
-            }
-        }
-        if (passwordArray.length >= 8 && upperCasePresent) {
-            System.out.println("Password is Valid");
-        } else {
-            System.out.println("Password is Invalid");
         }
     }
 
